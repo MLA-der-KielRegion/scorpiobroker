@@ -1,4 +1,5 @@
 # Scorpio NGSI-LD Broker
+Scorpio ist ein NGSI-LD-konformer Kontextbroker , der von NEC Laboratories Europe und NEC Technologies India entwickelt wurde. Er implementiert die vollständige NGSI-LD-API gemäß der Spezifikation der ETSI Industry Specification Group on cross cutting Context Information Management (ETSI ISG CIM).
 
 ## TL;DR
 
