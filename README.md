@@ -50,6 +50,7 @@ $ helm upgrade --install my-release helm -n my-namespace --create-namespace --va
 | rabbitmq.config.hostname|                                                 | rabbitmq                   |
 | rabbitmq.config.username|                                                 | ""                         |
 | rabbitmq.config.password|                                                 | ""                         |
+| rabbitmq.existingPasswordSecret| Use the rabbitmq-password from an existing secret | ""                |
 | config.ngsildCoreContext|                                                 | https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld |
 | config.quarkusLogLevel  |                                                 | INFO                       |
 | config.quarkusVertxEventLoopsPoolSize |                                   | 20                         |

@@ -4,6 +4,7 @@ metadata:
   name: {{ include "scorpio.fullname" . }}
   labels:
     {{- include "scorpio.labels" . | nindent 4 }}
+    app.kubernetes.io/component: {{ include "scorpio.fullname" . }}-aio
 spec:
   type: {{ .Values.service.type }}
   ports:

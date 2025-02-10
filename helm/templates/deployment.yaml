@@ -46,6 +46,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ include "scorpio.fullname" . }}-properties
+            - secretRef:
+                name: {{ include "scorpio.fullname" . }}-rabbitmq
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

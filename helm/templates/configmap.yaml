@@ -15,8 +15,3 @@ data:
   SCORPIO_HISTORY_DEFAULT_LIMIT: {{ .Values.config.scorpioHistoryDefaultLimit | int | quote }}
   SCORPIO_FEDUPDATERATE: {{ .Values.config.scorpioFedupdaterate | quote }}
   SCORPIO_SUBSCRIPTION_CHECKINTERVAL: {{ .Values.config.scorpioSubscriptionCheckInterval | quote }}
-  {{- if .Values.rabbitmq.enabled }}
-  CAMEL_COMPONENT_RABBITMQ_HOSTNAME: {{ .Values.rabbitmq.config.hostname | quote }}
-  CAMEL_COMPONENT_RABBITMQ_PASSWORD: {{ .Values.rabbitmq.config.password | quote }}
-  CAMEL_COMPONENT_RABBITMQ_USERNAME: {{ .Values.rabbitmq.config.username | quote }}
-  {{- end }}

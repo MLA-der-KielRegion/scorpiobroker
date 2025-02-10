@@ -131,12 +131,17 @@ tolerations: []
 
 affinity: {}
 
+serviceMonitor:
+  enabled: false
+
 rabbitmq:
   enabled: false
   config:
     hostname: rabbitmq
     username: user
     password: password
+  # Existing secret with RabbitMQ credentials (existing secret must contain a value for `rabbitmq-password` key)
+  existingPasswordSecret: ""
 
 config:
   ngsildCoreContext: https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.8.jsonld

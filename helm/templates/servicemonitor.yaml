@@ -1,0 +1,26 @@
+{{- if .Values.serviceMonitor.enabled -}}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "scorpio.serviceAccountName" . }}
+  labels:
+    release: prometheus
+    {{- include "scorpio.labels" . | nindent 4 }}
+  {{- with .Values.serviceAccount.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "scorpio.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: {{ include "scorpio.fullname" . }}-aio
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  endpoints:
+    - port: http
+      path: /q/metrics
+      interval: 30s
+      scrapeTimeout: 10s
+{{- end }}
